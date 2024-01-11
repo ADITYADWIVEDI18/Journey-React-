@@ -1,1 +1,56 @@
+Html Js React CDN Hello World !! 
+React CDN Nested Siblings and Child
+What if we write something where we want to render the stuffs.
+Git push code
+Npm - Along with react makes our app faster also it is something that manage packages that
+we installed in our system.
+package.json
+Our package dependent on so many packages.Those packages that we are dependent on, are the dependencies. Npm manages it and take care of its version in the package.json file. 
+Bundlers- bundles our code so that it get production-ready.
+( Webpack , parcel , vite )
+npm i -D parcel
+There are two types of dependency that we installed :
+* Dev Dependency - required in development phase 
+* Normal Dependency - used in production also 
+tilde(~) and caret(^) in package.json?
+~version “Approximately equivalent to version”, will update you to all future patch versions, without incrementing the minor version. ~1.2.3 will use releases from 1.2.3 to <1.3.0.
+^version “Compatible with version”, will update you to all future minor/patch versions, without incrementing the major version. ^1.2.3 will use releases from 1.2.3 to <2.0.0.
+MAJOR-MINOR-PATCH 
+package-lock.json : It keep track of all the version of all the dependency.
+Node modules : It is kind of like a database contains the actual data of that dependency that
+projects need. It is huge !!
+Transitive Dependency : Our projects package.json shows that okay parcel is our dependency but parcel even has its own dependecy also and itself dependent lot of things
+There's nothing garbage in the project.Each are dependent to each other someway.
+Every dependencies in node modules has its own package.json
+Dependency Tree
+.gitignore - Files that are not going to be used in production.
+It is not required to push node module to github.
+npx parcel index.html 
+npm vs npx
+When we say npm means it calling command of npm. npx means executing package.
+Another way to bring React in our project is via npm.
+See Fetching from the CDN is the costly operation as we wouldnot have to make any network call for that also react version changes frequently sos it is easier to have it in our package.json and it is easier to manage all dependencies and also easier to manage React also as one of the dependency in our project. 
 
+# Parcel
+-Dev Build
+-Local Server
+-HMR = Hot Module Replacement
+-File Watching Algorithm - written in C++
+-Caching - Faster Builds
+-Image Optimization
+-Bundling
+-Compressing
+-Consistent Hashing
+-Code Splitting 
+-Differential Bundling - Support older browser
+-Diagnostic
+-Error Handling
+-HTTPs
+-Tree Shaking - remove unused code 
+
+Also Parcel not doing everything its own also it uses other library dependencies for fully functioning.
+
+npx parcel build index.html (For this remove main:App.js in package.json)
+dist folder
+When we write npx parcel index.html, It generates development build of our project and hosted on localhost:1234. So when it generates development build it puts up in the dist folder.
+--> browserslist
