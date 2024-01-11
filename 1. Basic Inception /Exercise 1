@@ -1,0 +1,35 @@
+● What is Emmet?
+● Emmet is a web development tool that helps developers write HTML and CSS code more quickly and efficiently.
+Emmet uses abbreviations and shortcuts to generate HTML and CSS code snippets. 
+It allows developers to write code faster by expanding these abbreviations into full-fledged HTML or CSS structures. 
+For example, you can type a short abbreviation and then use Emmet to automatically generate a complete HTML element with attributes.
+div>ul>li*3 
+-------->
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+
+● Difference between a Library and Framework?
+● While both libraries and frameworks provide reusable code, a library is a collection of functions that developers call when needed, allowing them to retain control.
+In contrast, a framework is a more comprehensive structure that dictates the overall architecture and control flow of an application, with the developer providing specific implementations within that structure.
+
+
+
+
+● What is CDN? Why do we use it?
+●
+● Why is React known as React?
+●
+● What is crossorigin in script tag?
+●
+● What is diference between React and ReactDOM?
+●
+● What is difference between react.development.js and react.production.js files via CDN?
+●
+● What is async and defer? - see my Youtube video ;)
+●
