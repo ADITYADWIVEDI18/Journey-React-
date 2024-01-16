@@ -1,0 +1,7 @@
+React Planning the app first for better creation.(Good developer approach)
+HelloFood(app) :
+1.First make plan about How it should look like ?
+2.What components we have in our app ?
+--> Header - Logo, Nav-items
+--> Body = Search,Restro-container
+--> Footer - Copyaddress Links Address Contact
