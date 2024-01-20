@@ -1,0 +1,43 @@
+                                                                                              	React - 03
+script - start build test
+like this
+"start":"parcel index.html",
+"build":"parcel build index.html",
+React Elements - createElement, createRoot, render 
+React Core usage became work very clumsy.
+//JSX - Javascript syntax which easier to create React Elements.
+We can write React without JSX also but makes developer life easy.
+JSX is a convention where we merge this HTML and JS together.
+JSX is not HTML inside JS but it is actually a HTML like syntax.
+JSX is only a syntax, ReactElement is an object
+JS engine understand all the version of ECMASCRIPT 
+const jsxHeading =<h1>Hello JS</h1> THis is not understand by JS engine so before going to 
+the JS engine it gets transpiled means converted to code that browser can understand.
+Therefore the transpiling done by Parcel. Parcel has many package and it gave the responsibility of transpilation to the package which is known as 'Babbel'.
+Babel is JS compiler. Babel jobs to convert the JSX into React Code.
+Babel is great !!
+// JSX --> Babel transpiles it into React.createElement --> React element(JS Object) --> HTML Element(render as HTML element) 
+If you have to give attributes to the JSX you have to use "camelCase".
+Multiple line JSX
+// React Components
+Class-Based Components - (old way coding style, use JS classes)
+and Functional Components (uses JS function to create components) 
+Functional Component - normal JS function which return some piece of JSX element
+const HeadingComponent = ()=> {
+return <h1 className="head">NamReact</h1>}
+const HeadingComponent = ()=>(
+<h1 className="head">NamReact</h1>)
+Both code same !! Different People Different Style !!
+How to render HeadingComponent ? 
+root.render(HeadingComponent) Incorrect !! Bcoz its not a React Element! Its Functional Component. The right way is :
+root.render(<HeadingComponent />);
+--> Component composition is the practice of combining smaller, self-contained components to create more complex and feature-rich user interfaces. This approach promotes re-usability, modularity, and maintainability.
+--> You can inject any JS inside your JSX inside the {} curly parenthesis.
+--> You need to put the things after its initialisation.
+--> We can use ReactElement inside React Element, use React Element inside Functional component,you can mix match anything inside anything. 
+ JSX takes care of malacious code. It will sanitizing the data and will do cross site attack for you. This is how powerful JSX is.
+--> <Title></Title> same as <Title/>also {Title()}
+Everything is JS at the end of day :)
+If your code is readable then not only the React can do it.JSX can make it all faster readable also.
+Appreciate BABEL and other important things also.
+...................................................
