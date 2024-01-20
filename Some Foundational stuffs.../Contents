@@ -1,0 +1,28 @@
+- Starting the project by using terminal
+- Creating an npm script for starting the project in the dev environment
+- Tips for starting a project when joining a new company
+  - Discussion on scripts in package.json
+- Introduction to JSX and its usage
+- Transpiling the JSX
+- Explanation of Babel
+  - JSX code
+- Concise explanation of Babel
+- Usage of class & className in JSX
+- Visual Studio Code Extensions
+  - Prettier
+  - "Bracket Pair Colorization" Toggler
+  - ES Lint and "Better Comments"
+- React Component & its two ways of writing (Class-based & Functional)
+- Nested Functional Component
+  - React Element
+  - React Component
+- Rendering a functional component
+  - `root.render(<HeadingComponent/>);`
+- How to render a component inside another component
+- Component Composition
+- Component without Arrow function
+  - Other ways of writing a component
+- How to put a React element inside a component?
+- How to put a React element inside a React element?
+- Cross-Site Scripting, JSX Expressions, React Fragments
+- Session Recap
