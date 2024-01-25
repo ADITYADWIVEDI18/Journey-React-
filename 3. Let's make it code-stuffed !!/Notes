@@ -1,7 +1,29 @@
 React Planning the app first for better creation.(Good developer approach)
-HelloFood(app) :
+NamFood :
 1.First make plan about How it should look like ?
 2.What components we have in our app ?
 --> Header - Logo, Nav-items
 --> Body = Search,Restro-container
 --> Footer - Copyaddress Links Address Contact
+External CSS
+Inline CSS - It is given using JS object.
+style = { { Js object } } or const cssProperties = {} (It is object.) , style = {cssProperties}
+
+And By Slowing making this small component we heading toward making a big app :)
+Static --> Dynamic Website (lit)
+props short form of properties which something pass to component.
+At the end they are just normal argument to the function.
+Passing props to component : React wrap all this in a object and pass it to the component as props.
+That props is now object.
+When we dynamically want to passing some data to the component then we pass it as a props.
+
+--> Data comes from the api or backend in form of JSON.
+Config Driven UI - Controlling UI using data,config and it comes from the backend.
+UI Layer and Data Layer
+Array.join() method
+Reusable Component using Dynamic data
+Best practicing to write a code.
+Array method - map (It is used multiple times like bread and butter.)
+Unique Key Property Each child in a list have unique 'key' prop.
+React dont recommend indexes for keys if the order of item may change.
+Unique id is the best practise.But index as a key is last option but you should keys in the lists.
