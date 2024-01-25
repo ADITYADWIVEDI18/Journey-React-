@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+.nav{
+    height: 50px;
+    background-color: rgb(217, 132, 14);
+    margin: 0 0 30px 0;
+}
+.nav-items{
+    font-size: 25px;
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    color: white;
+    margin: 0 0px 0 35%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.nav-items > *{
+    cursor: pointer;
+}
+.nav:hover{
+    background-color: white;
+    transition: .5s;
+    background-color: orange;
+    .nav-items{
+        transition: 0.5s;
+    }
+}
+.nav > *{
+    padding: 5px;
+}
+.card-container:hover {
+    transition: .8s;
+    cursor: pointer;
+    background-color: orange;
+}
+.card-container {
+    border-radius: 10px;
+    height: 375px;
+    width: 300px;
+    border: 2px solid rgb(187, 192, 180);
+    position: relative;
+    margin: 10px;
+    font-family: sans-serif;
+    color: white;
+    background-color: rgb(217, 132, 14);
+}
+.card-container > *{
+    padding: 10px 0 0 0;
+}
+.fold{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-container > img{
+    height: 60%;
+    width: 100%;
+    object-fit: contain;
+}
