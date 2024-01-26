@@ -1,0 +1,32 @@
+- React advantages discussed
+- Create src folder
+- Create components folder
+- React File Structure
+- Header component moved to component Header.js, importing to the main file
+- Export the file
+- Export & import body component
+- Export & import Restaurant card component
+- Create a utils folder 
+- Create a file constants.js
+- Create a MockData.js in Utils folder
+- Export & import ‘resList’
+- Two types of Import & Export: named export & multiple exports
+- Named Export
+- How to import the Named Export
+- Two types of Import & Export explained with examples
+- The whole program (App.js)
+- “Can I use a default export along with named export?” – Home Work
+- Make our app “Dynamic” (Interactive)
+- filter() function
+- React superpowers explained, Data layer & UI layer, Virtual DOM, Diff Algorithm, Reconciliation 
+- Hooks introduced
+- useState
+- Hook Syntax
+- React Hook Explanation
+- Why React is popular?
+- Diff Algorithm, Reconciliation Algorithm, React Fiber 
+- Virtual DOM
+- Diff Algorithm & React Fiber
+- React Fiber Architecture (GitHub)
+- Array Destructuring 
+- Session Recap
