@@ -4,10 +4,12 @@ import ReactDOM from "react-dom/client";
 const Header = () => {
   return (
     <nav className="nav">
+      <img src='https://dynamicposbd.com/wp-content/uploads/2022/12/logo-min.webp'></img>
       <div className="nav-items">
-      <li>Home</li>
-        <li>Cateogry</li>
-        <li>Order</li>
+        <li>Home</li>
+        <li>About us </li>
+        <li>Contact</li>
+        <li>Cart</li>
       </div>
     </nav>
   );
@@ -29,6 +31,10 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
+      <div className="search-box">
+      <input type="search" className="search-bar" placeholder="Search for your stuff..."/>
+      <img src="https://www.igsmonitor.com.au/images/search-icon-hi.png"/>
+      </div>
       <div className="fold">
         <Card resName='Meghna Foods' cuisine='Biryani, North India, Asian'/>
         <Card resName='KFC Foods' cuisine='Burger, Fast Food, Chinese'/>
@@ -40,5 +46,3 @@ const AppLayout = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<AppLayout />);
- 
- 
