@@ -1,1 +1,40 @@
+Certainly! Here's the information organized in a more formatted manner:
+
+**Architecture:**
+- Monolith Architecture
+- Microservices
+- Separation of concerns
+
+**UI Development:**
+- UI Microservice
+- useEffect() in React
+- Fetch() and Promise in JavaScript
+- React JS syntax and newer approaches to handle fetch()
+- CORS Policy and CORS Chrome Extension
+- Optional Chaining with an example
+
+**API and Data Handling:**
+- Live Data API
+- Deleting MockData.js file
+- Toggle login and logout button
+- Building Search Functionality
+- OnChange handler
+- Enhancing search functionality using toLowerCase() method
+
+**React Features and Concepts:**
+- State variables and the need for useState()
+- useState() usage and explanation
+- Reconciliation and Diff Algorithm in React
+- Conditional Rendering using Ternary Operator
+
+**UI/UX Elements:**
+- Spinning Loader
+- Shimmer UI
+- Shimmer Component Code
+- CSS Code for the Shimmer Component
+
+**Understanding React's Power:**
+- DOM Manipulation and Virtual DOM
+- Nice explanation of re-rendering
+---
 
