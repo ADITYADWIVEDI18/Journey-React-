@@ -60,11 +60,11 @@ const AppLayout = () => {
       <Header />
       <div className="search-box">
         <input type="search" className="search-bar" placeholder="Search for your stuff..." />
-        <button onClick={()=> {
+        <img src="https://www.igsmonitor.com.au/images/search-icon-hi.png" alt="search icon" />
+        <button className="button" onClick={()=> {
           const filterpost = listOfRestaurant.filter(res=> (res.data.rate > 4));
              setListOfRestaurant(filterpost);
         }}>Top Rating Restaurants</button>
-        <img src="https://www.igsmonitor.com.au/images/search-icon-hi.png" alt="search icon" />
       </div>
       <div className="fold">
         {listOfRestaurant.map((restaurant) => (
