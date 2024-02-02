@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+.nav{
+    min-height: 50px;
+    background-color: rgb(217, 132, 14);
+    margin: 0 0 0px 0;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.nav img
+{   position: relative;
+    width: 155px;
+    height: 120px;
+    border-radius: 15px;
+}
+.nav-items{
+    font-size: 30px;
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 20px;
+}
+.nav-items > *{
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.button {
+    font-size: 25px;
+    gap: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: orange;
+    color:white;
+    padding: 5px;
+    border:0;
+    border-radius: 5px;
+    margin:0 20px;
+}
+.button:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: white;
+    color: orange;
+    font-weight: 500;
+    border: 2px solid orange;
+}
+.nav:hover{
+    transition: .5s;
+}
+.nav-items>*:hover{
+    transition: 0.5s;
+    background-color: white;
+    color: orange;
+    font-weight: 500;
+}
+.nav > *{
+    padding: 5px;
+}
+.card-container {
+    border-radius: 10px;
+    width: 300px;
+    border: 2px solid rgb(187, 192, 180);
+    position: relative;
+    font-family: sans-serif;
+    color: white;
+    background-color: rgb(217, 132, 14);
+    padding: 5px;
+}
+.card-container> * {
+    margin: 10px 0 0 0;
+}
+.card-container:hover {
+    transition: .8s;
+    cursor: pointer;
+    background-color: orange;
+
+}
+.fold{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left:15px;
+    list-style: none;
+}
+.card-container > img{
+    height: 60%;
+    width: 100%;
+    object-fit: contain;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+}
+.search-bar{
+    width: 50%;
+    height: 35px;
+    margin: 15px 15px;
+    padding: 15px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 10px;
+    border: 2px solid darkorange;
+    font-size: 20px;
+}
+.search-box > img{
+    width: 30px;
+}
