@@ -1,0 +1,29 @@
+										React - 06
+Monolith Architecture 
+Micro Services, Seperation of Concerns , Single Responsibility Principle where each and every service has its own job.Nobody is interfering with it.
+Two approaches that data fetch from backend :
+a) Loads --> API --> Render
+As soon as page load we made an API call, we wait for data to come as soon as data come we render it.
+Poor Approach : Because In initial approach till we get API response , everthing i.e website is frozen.In that duration there's nothing to display there.We dont see anything and after Api response then we able to see the site which is not efficient approach.
+b) Loads --> Render --> API --> Render
+Another approach is as soon as page load we quickly render whatever is there, and then now we make API call and as soon as API responds we will just render the data on webpage.And in React we use 2nd approach.
+Better Approach:In this second approach we load the page and render the page whatever we can.So when we load initially atleast we see something on the page till API not get any response and then after it whole website get loads.So this approach is much more better.
+*useEffect has two argument :
+a) Callback function 
+b) Dependency array
+e.g useEffect(()=>{console.log("useEffect called");})
+When the body function will render react render it, and as soon as render cycle finish, it will just quickly call the callback function.
+This is how useEffect works.So if we have to do something after rendering the component you have to write it in useEffect.
+Fetching Data : 
+CORS Policy
+Live Data and Mock Data
+Optional Chaining
+Shimmer UI - shows fake actual UI of that website. Its make better user experience.
+Conditional Rendering
+How useState comes in the picture inspite of Js variable ? Because updation in UI through JS variable needs refreshing of website.But useState make it dynamic and change without any new refresh.
+As soon as we perform this (setVarible) React updated the variable and refresh this component.
+Okay one thing to known when React update something then it render the whole updated component rather than rendering something specific in that component.But invoking it, this time change the varaible into new variable name.
+Whenever a state update, react triggers a reconcillation cycle(re-render the component).
+Search Functionality
+Filtered Posts
+Quote : Code Slow :) It will got you less debugging.This instruction mainly for beginners.With experience and all you will getting faster and sharp.
