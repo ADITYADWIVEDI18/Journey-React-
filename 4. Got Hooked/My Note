@@ -1,0 +1,21 @@
+										React
+src Folder
+Good practise to keep seperate file for every components in project.
+React is expert in DOM manipulation. (Virtual Dom, Reconcillation)
+useState variable
+const [loperation , setOperation] = useState();
+Whenever a state varibale changes, React re-renders the component.
+Reconcilation Algorithm (React Fiber)
+Virtual DOM (representation of actual DOM),Normal JS object (when we console.log it)
+Diff Algoritghm finds difference between the old virtual DOM and real virtual DOM and then *actual update the DOM on every render cycle.
+React Fiber a new way to calculate Diff and update the DOM.
+See finding out the two HTML code is tough,finding out two JS object is fast.
+So it(React Fiber) find out difference between two object.
+In react 16 new algorithm to update the DOM came out i.e React Fiber,when we perform any
+new event then a new object is formed.It found out the difference between these object 
+then it actually updates the DOM.
+React Fiber -(Incremental Rendering topic)
+In useState we write like this :
+const [list,setList]=useState("");
+Question : How this list variable changed despite being a const variable ?
+Answer : Basically React is updating this btnName React and it is calling this Header(in component it is initialised) once again.But this time when we invoke this function, this list name is new variable with new value this is beauty of React. :) :)
