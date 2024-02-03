@@ -1,0 +1,43 @@
+Here's the list with the time information removed:
+
+- Class-based component example
+- Props, Props in Function-based component, Destructure
+- How to write the same example in a Class-based component
+- Mentioned about “Super(props)”
+- What if you want more props?
+- How can we write local/state variables in a Function Component
+- How can we create state/local variables in a Class component
+- “this.state” explained, Destructuring 
+- How do we create 2 state/local variables in both functional & class-based component
+- How to update the state variables in a Class component 
+- Interview Question
+- Life cycle of Class-based components
+    - Parent, child – Constructor 
+    - Parent, child – Render
+- ComponentDidMount(){ }, Life cycle of a Parent-child relationship
+- ComponentDidMount() used for API calls
+- API calls inside useEffect()
+- `this.props.name + “child constructor” 
+- React Lifecycle Methods Diagram
+- Why React is so fast?
+- DOM Manipulation 
+- Render phase, Commit phase
+- How to make API calls in class-based components?
+- GitHub API call
+- How to update the JSON data into our web page
+- Coding UserClass.js component
+- How the lifecycle works here in this code
+- Debugger
+- ComponentDidUpdate()
+- Mounting Cycle
+- API rate limit exceeded
+- Unmounting Phase/cycle
+- In older days, we were coding like this
+- How to write the same in class-based component – ProfileClass.js
+- More Deeper we explore the old way of writing React Code
+- What is the use case of componentWillUnmount()?
+- Problem of Single Page Application
+- Senior Developer should know this
+- What will happen if we create setInterval inside useEffect
+- Coding Profile.js 
+- Async in useEffect()
