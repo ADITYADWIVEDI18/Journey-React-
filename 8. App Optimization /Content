@@ -1,0 +1,20 @@
+Custom Hooks, Single Responsibility Principle
+Modularity
+Hook
+Create custom Hook – useRestaurantMenu 
+Write useEffect(), fetch(), How to optimize the code using custom hook?
+Make a custom Hook & put as packages (examples)
+A Hook to tell the user in Online or Offline
+Under utils folder create useOnlineStatus.js
+Coding useOnlineStatus.js
+Usage of dev console on browser, Making the network offline
+How to build green dot & red dot to identify online or offline (Reusability feature of React)
+Should we write “use” in a hook? Is it mandatory?
+How to further optimize the code?
+MakeMyTrip website
+Make smaller modules, code-splitting, chunking, Dynamic Bundling, Lazy Loading
+Lazy Loading
+Suspense keyword
+How to optimize the code (Till this discussed)
+Implementing Lazy Loading to other web pages
+Interview Tea
