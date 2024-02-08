@@ -1,0 +1,50 @@
+										                              React - 08 (Class Component)
+
+*Class Component at the end of day is JS.
+*React.Component is a class which is there inside React package.
+*Class Component has a render method which returns piece of code.
+*Passing prop in Class Component and functional component (Comparision)
+Creating State variable inside the Class Component
+*When im loading class based component on webpage means we creating a new instance of the class and giving it some props.So whenever we creating the class the constructor is called.This is best place to recieve props along with creating a state varible.
+* this.state = {} is a whole big object containing all the state.
+* Updating state variable.
+State variable cant be changed directly.
+-->So React give important function which is known as this.setState and we used this anywhere inside our class.
+In this.state we passing an object which containg the updated value of the state variable.
+For other variable it is not necessary to create another same type. You just simply patched up there.
+example : this.setState({
+	count : this.state.count + 1,
+	count2: this.state.count + 1,
+})
+*Life Cycle of React class based component :
+1. How the component is putup in the webpage?
+ or  How the component is mounted/loaded in the webpage?
+Suppose Aboutus page is parent component and userClass is inside the parent component.So when you load this component and render it. So in About component rendering goes line by line and  it see class component.So it starts loading the class component and now the instance of this class is created.
+So the first thing when class load(creating instance of the class) is constructor is called then render is called.
+First constructor then render.
+
+Now this become little tricky when class component is also parent component.& Check the LifeCycle of the class component.
+So the answer sequence is : Parent constructor < Parent render < Child Constructor < Chil render 
+ 
+Class Based component has one more very important method i.e componentDidMount().
+So basically when component is loaded first constructor then render and then componentDidMount call.
+This is mounting cycle of the react class component.
+
+If suppose componentDidMount is also inside the parent component whose child component has also the same.
+Parent constructor < Parent render < Child Constructor < Chil render < Child componentDidMount() < Parent componentDidMount()
+Because inside the parent while in render part it will go inside the child component rather moving to its componentDidMount().
+So thats how life cyle method works overhere in parent child relationship.
+
+componentDidMount() is used to make API calls.
+Why we do that in only this component ?
+
+First of all we want to load the component.Once we load the component then we make API call and fill the detail.So that React make it very fast.
+Similiarly in class Component we quickly want to render the component then make Api call and fill the data. I want to render my data as fast as possible then make API call get the data.
+
+
+  constructor <  render(load the component) < componentDidMount(Make Api call) ->Fill Api Data inside my component.
+ So this how we do in classbased component.
+
+* React LifeCycle Method 
+
+* React has two phases : Render and Commit phases.
