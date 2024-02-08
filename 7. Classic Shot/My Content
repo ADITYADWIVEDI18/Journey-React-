@@ -1,5 +1,5 @@
 										                              React - 08 (Class Component)
-
+(Class Component)
 *Class Component at the end of day is JS.
 *React.Component is a class which is there inside React package.
 *Class Component has a render method which returns piece of code.
@@ -46,5 +46,15 @@ Similiarly in class Component we quickly want to render the component then make 
  So this how we do in classbased component.
 
 * React LifeCycle Method 
+--> LifeCycle when having multiple childrens
 
+*React LifeCycle Diagram 
 * React has two phases : Render and Commit phases.
+In multiple child call,React will patched the render phasee of the children and then patched the commit phase of the children for optimisation.This is how it happen together.
+Why REACT patched the render phase ?
+Because once the commit phase start React try to update the DOM. DOM manipulation is the most expensive thing when we are updating the component(When loading the component DOM manipulation is very expensive, it takes lot of time.)
+Render phase , React is trigerring the Reconcillation and it find out the difference between the object.Everything in the render phase is happening inside virtual dom.
+Virtual DOM is fast because it is JS just deal with object.
+When it tries to update the DOM it says okay let me find all the children patched the render phase because render phase is very fast,commit phase takes time thats why it just patches the render phase all child component render then commit happen. Then DOM later on updated.
+
+Mounting --> Updating --> Unmounting 
