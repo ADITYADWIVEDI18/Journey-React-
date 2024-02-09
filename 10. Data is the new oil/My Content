@@ -1,1 +1,14 @@
+Higher Order Component : It is a function that takes a component and enhances it and then returns the component back.
+All React UI have two different layer.
+1. UI layer - Code you write inside JSX
+2. Data layer - State, props, local varibale, that curly brace inside JSX where we write all JS code is all modifying the data layer.
+This UI is powered by data layer.Data layer is very important if we know how to manage the data layer correctly  then our application will be superfast, performent.
+The major part is to handle this data layer. 
+
+card.@type also written as ["card"].["@type"]
+
+
+Controlled and Uncontrolled Component
+
+
 
