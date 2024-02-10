@@ -7,8 +7,10 @@ The major part is to handle this data layer.
 
 card.@type also written as ["card"].["@type"]
 
-
 Controlled and Uncontrolled Component
+Lifting the State
+Props Drilling
+
 
 
 
