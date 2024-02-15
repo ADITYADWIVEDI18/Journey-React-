@@ -1,1 +1,171 @@
+										React- 12 
+React Redux Playlist : State Management Library
+Redux is not mandatory at everwhere.
+Another Library for State Management is Zustand and many more.
+Redux offers State Management and it doesnot need to be react application itself. It runs with other library and framework as well.But it is heavely used with react.
+Traditional way of writing the redux some called "Vanilla Redux".
+Redux toolkit needs less boilercode and standard way of writing Redux now.
+Redux is very complicated and has huge initial learning curve and need lot of packagess to install and for using the stuff. RTK made it less complicated now as it is still little complex but it is now less than it used to be in past.
 
+Redux Store : Store almost all state data here.
+We have slices in the redux store(small portion of store). 
+Slices : to keep data seperate we make logical partition/logical seperation. e.g - cartSlice.We have many slices in the redux.
+
+When we click on specific add button.It dispatches an action i.e call a function and this function will actually modify the cart. 
+This function is known as Reducer.
+
+How to write data ?
+Hit Button --> Dispatch action --> Reducer function --> Update the slice of Redux store.
+
+Why we go through so many steps ? 
+
+How to read data ?
+For that we use known something known as "Selector"
+When we using Selector we need to "subscribe" to the store.
+So Header is subscribing the store to get the cart information using the useSelector.
+Redux will automatically change the information as soon as changes made in the slice store.
+Architecture of Redux  
+
+
+Install RTK and react-redux
+npm i @reduxjs/toolkit react-redux
+Buil our Store
+Conncect our store to our app
+Slice(cartSlice)
+dispatch(action)
+Read data using Selector 
+
+1.Building Store 
+import { configureStore } from "@reduxjs/toolkit";
+const appStore = configureStore();
+export default appStore;
+
+
+2. Conncect our store to our app
+Provide the store to the application 
+import { Provider } from "react-redux";
+It is kind of bridge between react and redux.
+  <Provider store={appStore}></Provider>
+This Provider provide the store and take store as prop and it will take our appStore(store) that you imported.
+If you dont want to use redux to whole app then we can specify it in the particular pportion of the app.
+Wherever you need this wrap it overthere.
+<Provider store={appStore}>
+      <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
+        <div className="app">
+          <Header />
+          <Outlet />
+          <Footer />
+        </div>
+        </UserContext.Provider>
+        </Provider>
+
+
+3. Create Slice(cartSlice)
+import { createSlice } from "@reduxjs/toolkit";
+
+const createSlice = createSlice({
+    name: 'cart', //Name of the Slice
+    initialState: {
+        items : []
+    },
+    reducers : {
+        addItem : (state,action) =>{
+            state.items.push(action.payload);
+        },
+        removeItem : (state)=>{
+            state.items.pop();
+        },
+        clearCart : (state)=>{
+            state.items.length=0;
+        }
+    }
+})
+
+ clearCart is an action that maps to this reducer function (state)=>{
+            state.items.length=0;
+        }
+
+
+We write reducer corresponding to each action.
+Different action in the cart like : Add an item , Remove an item, Clear the items
+Its like Api to communicate with reduxstore.
+If you want to add item then dispatch add item section.
+action
+dispatch
+payload
+
+4.Adding Slice to the store
+const appStore = configureStore({
+    reducer : {
+        
+    }
+});
+
+5. Selector is Hook inside React.
+
+import { useSelector } from "react-redux";
+
+  // Subscribing to the store using a Selector
+  const cart = useSelector((store)=> store.cart.items );
+
+This reducer responsible to modify the appStore and it is a combination of different small store.
+Each slice we have different reducer.
+
+6. Dispatch an action 
+const dispatch = useDispatch();
+
+Whenever you dispatch an action, it will take whatever you data passin, it basically create a object and it will create a payload inside this object and add whatever a data you passing in this object like this 
+{
+  payload : "pizza"
+}
+and it will take this object and pass it as second argument in the reducer function and there it do action(like push(action.payload))
+and we get the pizza in our items list.
+import { clearCart } from "../utils/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+    const dispatch = useDispatch();
+    const handleClearCart = () => {
+        dispatch(clearCart());
+    }
+
+
+Difference between 
+1. onClick = {handleAddItem}
+2. onClick = {() => handleAddItem(item)}
+3. onClick = {handleItem(item)}
+Answers : 
+onClick={handleAddItem}: This will directly call the handleAddItem function when the element is clicked. It's useful when you don't need to pass any additional arguments to the function.
+
+onClick={() => handleAddItem(item)}: This will create an anonymous arrow function that calls handleAddItem(item) when the element is clicked. This is useful when you need to pass additional arguments (like item in this case) to the function.
+
+onClick={handleItem(item)}: This is incorrect because it will immediately call handleItem(item) when the component is rendered, not when the element is clicked. If you want to pass arguments using this approach, you should use an arrow function like in the second example: onClick={() => handleItem(item)}.
+
+Important 
+  1.  const cartItems = useSelector((store) => store.cart.items);
+  2.  const store = useSelector((store)=> store);
+Second one is less effeiceient. Use selector carefully.
+Basically what happens here is when we write like this the store variable subscribe to the redux store ,whenever  anything changes inside the store your cartComponent will get to know basically This store variable updated whenever anything changes in the store and in whole store.So we dont want to subscribe of whole store.
+Suppose if anything happen in one slice it is nothing to do with another slice so why the paticular variable subscribe to that store.
+So when the appStore gets very big so anything random changes in store then we dont want to affected by it. 
+So the better way is : 
+  1.  const cartItems = useSelector((store) => store.cart.items);
+
+So we are selecting the specific portion of the store.
+
+Reducer is a combination of small reducer functions.
+AppReducer is combination of small reducers.
+
+Vanilla(Older) Redux says not to mutate the state directly.
+
+Immer Library is kind of finding the difference between original state, mutated state and gives the new state i.e immutable state.
+All the logic of redux abstracted and we dont take care of this.Immer done all this job.
+Redux Toolkit behind the scene uses Immer.js.
+
+// Original Sate : { items:["pizza"] }
+RTK says you have to either mutate the existing state or returns a new state.
+// like this 1.Mutate the state : state.items.length = 0
+2. Return a new state : return {items : []}
+
+Immer JS
+Redux DevTools 
+Go Read RTK 
