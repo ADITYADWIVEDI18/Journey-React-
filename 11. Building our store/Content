@@ -1,0 +1,99 @@
+Here's the information organized in a more formatted manner:
+
+### React-12
+
+**React Redux Playlist:** State Management Library
+
+- Redux is not mandatory everywhere. Another library for state management is Zustand, among others.
+- Redux offers state management and does not need to be exclusive to React applications. It can run with other libraries and frameworks as well, but it is heavily used with React.
+- The traditional way of writing Redux is sometimes called "Vanilla Redux."
+- Redux Toolkit (RTK) requires less boilerplate and is now the standard way of writing Redux.
+- Redux was very complicated and had a huge initial learning curve, requiring a lot of packages to install and use. RTK has made it less complicated, although it is still a bit complex, but less so than it used to be.
+
+#### Redux Store
+- Stores almost all state data here. We have slices in the Redux store, which are small portions of the store.
+- Slices: To keep data separate, we make logical partitions or logical separations. For example, cartSlice. We have many slices in Redux.
+
+#### How Redux Works
+- When we click on a specific add button, it dispatches an action, which calls a function that actually modifies the cart. This function is known as a Reducer.
+- How to write data? Hit Button -> Dispatch action -> Reducer function -> Update the slice of Redux store.
+- Why go through so many steps?
+
+#### How to Read Data?
+- For that, we use something known as a "Selector." When using a Selector, we need to "subscribe" to the store. The Header subscribes to the store to get the cart information using the useSelector. Redux will automatically change the information as soon as changes are made in the slice store.
+
+### Architecture of Redux
+
+1. **Install RTK and react-redux**
+   ```bash
+   npm i @reduxjs/toolkit react-redux
+   ```
+
+2. **Building Store**
+   ```javascript
+   import { configureStore } from "@reduxjs/toolkit";
+   const appStore = configureStore();
+   export default appStore;
+   ```
+
+3. **Connect Store to App**
+   ```javascript
+   import { Provider } from "react-redux";
+   <Provider store={appStore}></Provider>
+   ```
+
+4. **Create Slice (cartSlice)**
+   ```javascript
+   import { createSlice } from "@reduxjs/toolkit";
+   const cartSlice = createSlice({
+       name: 'cart', // Name of the Slice
+       initialState: {
+           items: []
+       },
+       reducers: {
+           addItem: (state, action) => {
+               state.items.push(action.payload);
+           },
+           removeItem: (state) => {
+               state.items.pop();
+           },
+           clearCart: (state) => {
+               state.items.length = 0;
+           }
+       }
+   });
+   ```
+
+5. **Adding Slice to the Store**
+   ```javascript
+   const appStore = configureStore({
+       reducer: {
+           cart: cartSlice.reducer
+       }
+   });
+   ```
+
+6. **Selector**
+   ```javascript
+   import { useSelector } from "react-redux";
+   const cartItems = useSelector((store) => store.cart.items);
+   ```
+
+7. **Dispatch an Action**
+   ```javascript
+   const dispatch = useDispatch();
+   const handleClearCart = () => {
+       dispatch(clearCart());
+   }
+   ```
+
+#### Important Concepts
+- Difference between various ways of handling onClick events.
+- Efficient use of Selector in React Redux.
+- The use of Immer library in Redux for immutability.
+- Importance of Redux DevTools.
+
+### Conclusion
+Redux is a powerful state management library used in conjunction with React to manage complex application states.
+It offers various features to simplify state management, such as slices, reducers, and selectors.
+Understanding these concepts is essential for efficient state management in Redux.
