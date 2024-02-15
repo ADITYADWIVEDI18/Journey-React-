@@ -1,17 +1,113 @@
 Higher Order Component : It is a function that takes a component and enhances it and then returns the component back.
+At the end of day it just a function that takes a component and returns a component.
+e.g Promoted Restaurant feature in Swiggy.
+
+Creating Higher Order Coomponent :
+
+const withPromotedLabel = (RestaurantCard)=>{
+
+	return (props) = {
+		
+	    return (
+		//return piece of JSX
+		<div>
+		  <label>Promoted</label>
+		  <RestaurantCard {...props}/>
+		</div> );
+	}
+}
+
+These Higher Ordered Component are pure function.Here in RestaurantCard we are not changing anything but adding something top of it enhancing it.
+
+
+Any UI application has not its own logic of its own.
 All React UI have two different layer.
 1. UI layer - Code you write inside JSX
 2. Data layer - State, props, local varibale, that curly brace inside JSX where we write all JS code is all modifying the data layer.
-This UI is powered by data layer.Data layer is very important if we know how to manage the data layer correctly  then our application will be superfast, performent.
+This UI is powered by data layer.Data layer is very important. 
+*If we know how to manage the data layer correctly  then our application will be superfast, performent.
 The major part is to handle this data layer. 
+Making Accordion 
+1. Open and collapse cateogry before lifting the state
+
+All restaurantCateogry maintain their own state and all have their own shownItem.
+If i open some specific cateogry then i want others to be collapse itself.
+So I dont want to give power of show-hide to each cateogry I want my state to lifted up.
+I want RestaurantMenu to  control all these activities rather than all cateogry.So what i pass from  the top it should do the same. 
+Want parent to control this thing for children.
+
+2. "   "  after lifting the state (When we open one then other got collapse)
+So I dont want c to have its own state.
+Now This RestaurantMenu controlling this RestaurantCateogry So RestaurantCateogry is CONTROLLED COMPONENT NOW.
+
+Controlled Component - If it is managed to control some other component.
+UnControlled Component - If it is managed by itself.
+
+Can i update my state variable of my parent from chilren ?
+So for this i have to pass the state to my children.
+
+React Dev Tools 
 
 card.@type also written as ["card"].["@type"]
-
 Controlled and Uncontrolled Component
-Lifting the State
+Lifting the State - If we have to controls our children.
+
 Props Drilling
+React Context API - For accessing data from any where in the page.
+UserContext - To create Context = createContext 
+React gave us Hook to use the information i.e useContext
+const data = useContext(UserContext);
+In our project we can create multiple context. So whatever data you want to used pass it to useContext. 
+So should we pass all data in Context then there is no use of props??
+No only the data that you gonna use on multiple place the same data we use inside Context. 
+But we can access it anywhere we want to.
 
+How to access the data in the class based component as there is no HOOKS concept ?
+First you have to import that UserContext in the class.
+React give us power to use like this in class based component-:
+Inside it we have a JSX which has a callback function and this function get access to that data. 
+<UserContext.Consumer>
+{(data) => console.log(data)}
+</UserContext.Consumer>
+IN Console : {loggedInUser: "Abc Name"}
+So destructure the data and return the piece of JSX you want to print.
+<UserContext.Consumer>
+{({loggedInUser}) => <h1>This is {loggedInUser}</h1>}
+</UserContext.Consumer>
+These are the ways to consume the Context information.
 
+How to change or modify the Context information ? 
+To pass the new info in our app We will use UserContext.Provider.
+Wrap it to whole component if we want to pass data to whole app
+<UserContext.Provider value={loggedInUser : userName}>
+ App ...
+</UserContext.Provider>
 
+To make this only present or show the effect on Header Just wrap it around only the Header component.
+<UserContext.Provider value={loggedInUser : userName}>
+ Header ...
+</UserContext.Provider>
+Its depend on me i can available it to any place inside my project.
+I also gave it to many times.
+ <UserContext.Provider value={loggedInUser : MUSK}>
+ App ...
+<UserContext.Provider value={loggedInUser : Elon}>
+ Header ...
+</UserContext.Provider>
+</UserContext.Provider>
 
+or  Other Way
 
+import {createContext} from "react";
+export const CounterContext = createContext(null);
+export const UserProvider = (props) => {
+	return (
+	  <UserContext.Provider>
+	     {props.children}
+	  </UserContext.Provider>
+	)
+}
+ import {CounterProvider} from "./context/Counter";
+<UserProvider value={loggedInUser : MUSK}>
+ <App/>
+</UserProvider>
