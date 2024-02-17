@@ -1,5 +1,5 @@
 										React- 12 
-React Redux Playlist : State Management Library
+React Redux Playlist : State Management Library 
 Redux is not mandatory at everwhere.
 Another Library for State Management is Zustand and many more.
 Redux offers State Management and it doesnot need to be react application itself. It runs with other library and framework as well.But it is heavely used with react.
