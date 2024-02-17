@@ -1,4 +1,4 @@
-									                                            React - 13(React Testing)
+									  React - 13
 Testing-Even you make small change in our application it will introduced bugs anywhere in the app. We should concern about every line of code.So testing is very important.
 1. Mannual Testing - Testing what i have developed.
 2. There are three type of testing that we do as a developer by writing a code.	
@@ -81,4 +81,33 @@ npm install --save-dev jest-environment-jsdom
  Headers.spec.js
  Headers.spect.ts
 
-__ is dunder test 
+__ is  called dunder test. 
+
+Sampele :
+
+How to write test cases ?
+
+test ("", ()=>{})
+This is how we write test case and it has two arguments. 
+
+sum.js
+const sum=(a,b)=>{
+    return a+b;
+}
+
+export default sum;
+
+sum.test.js
+import sum from "../sum";
+
+test("Sum function should calculate the sum of two numbers",()=>{
+
+    const result = sum(3,4);
+
+    //Assertion
+    expect(result).toBe(5);
+})
+
+npm run test 
+
+* Now running and writing Test cases for React Components.
