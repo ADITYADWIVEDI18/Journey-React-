@@ -1,0 +1,84 @@
+									                                            React - 13(React Testing)
+Testing-Even you make small change in our application it will introduced bugs anywhere in the app. We should concern about every line of code.So testing is very important.
+1. Mannual Testing - Testing what i have developed.
+2. There are three type of testing that we do as a developer by writing a code.	
+a) Unit Testing
+b) Integration Testing
+c) End to End Testing 
+
+a) Unit Testing : You Test your React component in isolation.Testing a small portion of our react component not concern about whole app while testing.
+b) Integration Testing : Testing the integration of component.
+c) End to End Testing : Testing React application as soon as user lands on the website and to user leave the website.We test every type of flow.
+
+For e2e testing we need some tools to do the test but now as a developer we majorily concern about this two testing i.e Unit and Integration Testing. 
+Some company demands testing too.
+
+Some of important library for doing testing i.e :
+React Testing Library : Builds on Top of DOM Testing Library by adding APIs for working with React Components.
+If we initialised our work using create-react-app the react testing library is pre-installed in it.
+
+React uses something known as "JEST".
+It is JS testing framework and react testing library and DOM testing library uses JEST behind the scene.
+We both need react testing library and JEST both in our project.
+
+npm i -D @testing-library/react 
+npm i -D  jest
+
+Usign Babel :
+We are using JEST along with babel so we need to install some additional other dependencies along with it.
+
+Go on the JEST Website and you got all this stuff to install : 
+npm install --save-dev babel-jest @babel/core @babel/preset-env
+
+Go and paste the default code to configure it in the babel.config.js
+
+Now as we know that Parcel already used Babel which has its own configuration setting and now when we trying to add extra Parcel configuration.So Parcel will get confused as there is confliction between them.So we have to change Parcel behaviour to accomodate to use Parcel along with the JEST.
+
+(Configuring Parcel Config file to disable default babel transpilation)
+So in final we want the new config to work rather than Parcel by default have it.
+To do this Parcel says we have to make change in .parcelrc file.
+Just go to Parcel documentation for this.
+
+So now we setup our things to work.
+
+How to run testcases ? 
+Command : npm run test
+
+Start writing our Test cases :
+
+npx jest --init 
+Once we run this command it will ask me some questions like :
+1. Choosing the environment that we will used for testing.
+
+JS-DOM
+So when we run test cases so there is no server running or browser running.So they need environment to run. They will need a environment oor runtime.
+So JSDOM is a libraru which parses and interacts with assembled HTML just like a browser.
+So its not actually a browser but it is like a browser which will give you the features of browser.
+
+So when we testing a Header component then it is load there in JS-DOM.
+
+2. Do you want to coverage reports?
+It shows the coverage that how much we covered.
+
+3. Which provider should be used to instrument code for coverage?
+Select Babel
+
+And we got what it have.
+
+Now install jsdom library.
+So if we go and see React testing library and go to setup option.
+There we see that if we use React testing library with jest28.
+There it is mentioned that if you were using jest 28 or later then jest-environment jsdom package has to be installed seperately.
+
+Earlier when we use React testing library, then at that time this  jest-environment jsdom package already present in the library.
+
+npm install --save-dev jest-environment-jsdom
+
+* __test__ 
+
+*Headers.test.js 
+ Headers.test.ts
+ Headers.spec.js
+ Headers.spect.ts
+
+__ is dunder test 
