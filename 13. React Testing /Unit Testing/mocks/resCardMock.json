@@ -1,0 +1,70 @@
+{
+    "info": {
+        "id": "496423",
+        "name": "Dum Biryani Hub",
+        "cloudinaryImageId": "dzfnv4xnrfnchnmnffyd",
+        "locality": "Tavarekere",
+        "areaName": "Btm Layout",
+        "costForTwo": "₹450 for two",
+        "cuisines": [
+            "Biryani",
+            "North Indian",
+            "Chinese",
+            "Desserts",
+            "Beverages"
+        ],
+        "avgRating": 3.5,
+        "parentId": "297555",
+        "avgRatingString": "3.5",
+        "totalRatingsString": "1K+",
+        "sla": {
+            "deliveryTime": 36,
+            "lastMileTravel": 7.5,
+            "serviceability": "SERVICEABLE",
+            "slaString": "35-40 mins",
+            "lastMileTravelString": "7.5 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-02-20 23:59:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "aggregatedDiscountInfoV2": {},
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-f115b953-ff31-45cc-b1ec-159dbdbbd0d1"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/dum-biryani-hub-tavarekere-btm-layout-bangalore-496423",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}
