@@ -12,7 +12,7 @@ const RestaurantCateogry = ({data , showItems , setShowIndex }) => {
     setToggle(!toggle);
   }
 
-
+ 
   return ( 
     <div>
     <div className="bg-orange-100 w-6/12 mx-auto p-4 my-4 shadow-xl flex justify-between">
