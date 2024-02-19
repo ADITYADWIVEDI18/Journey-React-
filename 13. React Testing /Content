@@ -167,3 +167,46 @@ We also group the small test-cases by writing something like "describe".
 Descibe block has multiple test-blocks in it.
 
 "it" is an just another name of "test".
+
+
+Our JS-Dom understand jsx code,react and js code but it not understands redux code,it doesnot know selector... because this is part of redux.
+So we have to provide store to our Header where we do the test.
+This Provider come from our react-redux.
+
+It also not understand Link component so we have to also give context of the Link component.So for this we have to provide router.
+
+import { render } from "@testing-library/react";
+import { Provider } from "react-redux";
+import appStore from "../../utils/appStore";
+import Header from "../Header";
+import { BrowserRouter } from "react-router-dom";
+it("Should load Header Component with a login button", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>
+  );
+});
+
+
+ 
+
+We can also pass regex here when we pass text.
+
+//Firing Eventt
+
+
+    //Querying 
+    const loginButton = screen.getByRole("button",{name:"Login"});
+  
+    //After firing click event it changed it into Logout Buttin.
+    fireEvent.click(loginButton);
+
+    const logoutButton = screen.getByRole("button",{name:"Logout"});
+
+    //Assertion
+    expect(logoutButton).toBeInTheDocument();
+
+//
