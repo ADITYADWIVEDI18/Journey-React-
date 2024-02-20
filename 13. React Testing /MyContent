@@ -209,4 +209,83 @@ We can also pass regex here when we pass text.
     //Assertion
     expect(logoutButton).toBeInTheDocument();
 
-//
+
+
+// Integration Testing : How to test conjuction of many components.
+ Search.test.js
+
+it("Should render the body component with Search",()=>{
+
+    //render
+    render(<Body/>);
+
+    
+
+})
+
+//Mocking the Function : 
+
+fetch is superpower of browser.Its not in core of JS.This is given by the browser. 
+The Body is render inside a js-dom which is browser-like things not the browser.So it cant 
+understand fetch.
+So we have to write mock fetch function.
+ global.fetch(global is global object wherever this Body being rendered) 
+
+So we have to replace our global.fetch = jest.fn(()=>{})
+This will give me a mock fetch function. This function takes a callback function and here i mock exactly like fetch function works.  
+
+As our fetch function returns promise so we have also return promise for this because i have to make similiar identical to the original fetch function. And it resolve with json 
+and this json is again a function that returns a promise.resolve.
+  
+The test mock funtion is not make actual network call because this test case doesnot run on browser or something which has capability to talk to the world.This only runs on JS-DOM which is a browser like environment.So when we running on there we not actually make a Api call and this test cases work even we disconnect from internet,we dont need internet or browser to run this test cases.
+So writing this test cases thats why we writing mock function and thats why we use mock data.
+
+global.fetch = jest.fn(()=>{
+  
+  return Promise.resolve({
+	json : ()=>{
+	 return Promise.resolve(MOCK_DATA);
+	},
+});	
+
+});
+
+{ 
+To auto test the testcases after any changes : 
+We write like this -
+"watch-test": "jest --watch"
+
+And after "npm run watch-test" we used this.
+}
+
+One important thing that whenever we doing any async or state change operation then we have to wrap render function into a act funtion.
+This act funtion comes from react-dom/test-utils.
+
+it("Should render the body component with Search", async ()=>{
+
+  
+	 await act(async ()=>{
+        	//render
+    	   render(<Body/>);
+	}) 
+	    
+
+	const searchBtn = screen.getByRole("button",{name:"Search"});
+	
+	const searchInput = screen.getByTestId(searchInput)
+ 	//For this give extra attribute i.e like data-testid
+
+	fireEvent.change(searchInput,{target:{value : "burger"}})
+	//This object is simulating what we got in the event in the onChange in the jsx 	input tag.
+
+	fireEvent.click(searchbtn);
+
+	const cards = screen.getAllByTestId("resCard");
+	
+	//assertion 
+	expect(cards.length).toBeInTheDocument(5);
+
+})
+
+For Link we have to wrap our component in BrowserRouter.
+To used toBeInTheDocument() in document we have to import my "@testinglibrary/jest-dom"
