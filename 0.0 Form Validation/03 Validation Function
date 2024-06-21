@@ -1,0 +1,57 @@
+import React from "react";
+import './App.css';
+
+import { useFormik } from "formik";
+
+
+const App = () => {
+
+   const initialValues = {
+      name : "",
+      email : "",
+      channel : "",
+     };
+
+   const onSubmit = values => {
+      alert(JSON.stringify(values, null, 20));
+     };
+
+   const validate = values => {
+
+      let errors = {};
+
+      if(!values.name)
+         {errors.name="Required : Fill the name!!";}
+      
+      if(!values.email)
+         {errors.email="Required : Fill the email!!";}
+      else if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(values.email))
+         {errors.email="Invalid Email Format";}
+
+      if(!values.channel)
+         {errors.channel="Required : Fill the channel!!";}
+
+      console.log("Errors",errors);
+      return errors;
+  };
+
+  const formik = useFormik({
+     initialValues,
+     onSubmit,
+     validate 
+  });
+
+  return (
+      <form onSubmit={formik.handleSubmit}>
+         <label htmlFor="name">Name:</label>
+         <input type="text" id="name" name="name" onChange={formik.handleChange} value={formik.values.name} /> <br/>
+         <label htmlFor="email">Email:</label>
+         <input type="text" id="email" name="email" onChange={formik.handleChange} value={formik.values.email} /> <br/>
+         <label htmlFor="channel">Channel:</label>
+         <input type="text" id="channel" name="channel" onChange={formik.handleChange} value={formik.values.channel} /> <br/>
+         <button>Submit</button>
+      </form>
+  );
+};
+
+export default App;
