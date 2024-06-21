@@ -1,1 +1,6 @@
+Points about Field Component:
+By default it renders HTML 
+Behind the scene it hooks up with the element to formik i.e handleChange, handleBlur and of course value of form field.
 
+Any additional props in the field component will passed through.
+Ability to render different element rather than input element
