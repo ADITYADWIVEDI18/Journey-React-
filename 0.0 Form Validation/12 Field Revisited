@@ -1,6 +1,159 @@
-Points about Field Component:
-By default it renders HTML 
-Behind the scene it hooks up with the element to formik i.e handleChange, handleBlur and of course value of form field.
 
-Any additional props in the field component will passed through.
-Ability to render different element rather than input element
+import React from "react";
+import './App.css';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from 'yup';
+
+const App = () => {
+  const initialValues = {
+    name: "",
+    email: "",
+    channel: "",
+    comments: "",
+    address: ""
+  };
+
+  const onSubmit = values => {
+    alert(JSON.stringify(values, null, 2));
+    console.log("Form values", values);
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Required"),
+    email: Yup.string().email('Invalid Email Format').required('Required'),
+    channel: Yup.string().required('Required'),
+    address: Yup.string().required('Required')
+  });
+
+  return (
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+      <Form>
+        <div className="form-control">
+          <label htmlFor="name">Name:</label>
+          <Field
+            type="text"
+            id="name"
+            name="name"
+          />
+          <ErrorMessage name="name" component="div" className="error" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="email">Email:</label>
+          <Field
+            type="email"
+            id="email"
+            name="email"
+          />
+          <ErrorMessage name="email" component="div" className="error" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="channel">Channel:</label>
+          <Field
+            type="text"
+            id="channel"
+            name="channel"
+          />
+          <ErrorMessage name="channel" component="div" className="error" />
+        </div>
+      
+        <div className="form-control">
+          <label htmlFor="comments">Comments:</label>
+          <Field
+            as="textarea"
+            id="comments"
+            name="comments"
+          />
+          <ErrorMessage name="comments" component="div" className="error" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="address">Address:</label>
+          <Field name="address">
+            {(props) => {
+                const { field, meta } = props;
+                return (
+              <div>
+                <input id="address" type="text" {...field} />
+                {meta.touched && meta.error ? <div className="error">{meta.error}</div> : null}
+              </div>)
+            }}
+          </Field>
+        </div>
+
+        <button type="submit">Submit</button>
+      </Form>
+    </Formik>
+  );
+};
+
+export default App;
+
+
+
+
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Certainly! Here is a comprehensive description of the `Field` component in Formik:
+
+### Points about the Field Component:
+
+1. **Default Rendering**:
+   - By default, the `Field` component renders a standard HTML input element.
+   - It provides an easy way to connect form fields to Formik's state and handlers.
+
+2. **Integration with Formik**:
+   - Behind the scenes, `Field` hooks up the form element with Formik, handling key operations such as `handleChange`, `handleBlur`, and automatically setting the value of the form field based on Formik's state.
+   - This integration simplifies form management and ensures that the form fields are always synchronized with Formik's internal state.
+
+3. **Additional Props**:
+   - Any additional props passed to the `Field` component will be spread onto the rendered element.
+   - This means you can pass custom attributes or event handlers directly to the `Field`, and they will be applied to the underlying HTML element.
+
+4. **Rendering Different Elements**:
+   - `Field` has the ability to render elements other than the default input element.
+   - By specifying the `as` prop, you can render different HTML elements like `textarea`, `select`, or even custom components.
+   - Example: `<Field as="textarea" name="comments" />` renders a `textarea` element instead of an input.
+
+5. **Render Props Pattern**:
+   - `Field` supports a render props pattern, allowing for more advanced use cases where you need to render a custom component or want more control over the rendering process.
+   - When using render props, Formik passes several useful properties (`field`, `form`, `meta`) that can be used to manage the field's state and display validation messages.
+   - Example:
+     ```jsx
+     <Field name="address">
+       {({ field, form, meta }) => (
+         <div>
+           <input type="text" {...field} />
+           {meta.touched && meta.error ? <div className="error">{meta.error}</div> : null}
+         </div>
+       )}
+     </Field>
+     ```
+
+6. **Field-Level Validation**:
+   - You can define validation rules specific to a field using the `validate` prop on the `Field` component.
+   - This allows for more granular control over the validation logic for individual fields.
+   - Example:
+     ```jsx
+     <Field name="email" validate={value => value ? undefined : 'Required'}>
+       {({ field, meta }) => (
+         <div>
+           <input type="email" {...field} />
+           {meta.touched && meta.error ? <div className="error">{meta.error}</div> : null}
+         </div>
+       )}
+     </Field>
+     ```
+
+7. **Handling Custom Inputs**:
+   - For custom input components, `Field` can be used with render props to ensure they integrate seamlessly with Formik.
+   - This ensures that custom components have access to Formik's `handleChange`, `handleBlur`, and form state.
+
+By understanding and utilizing these aspects of the `Field` component, you can effectively manage form fields within Formik, ensuring a smooth and efficient form handling experience.
+
