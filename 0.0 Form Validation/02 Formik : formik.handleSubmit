@@ -1,4 +1,3 @@
-
 import React from "react";
 import './App.css';
 
@@ -15,6 +14,7 @@ const App = () => {
      },
      onSubmit: values => {
       alert(JSON.stringify(values, null, 20));
+      console.log("Form values",values);
      }
 
   });
